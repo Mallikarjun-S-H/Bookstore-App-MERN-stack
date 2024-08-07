@@ -12,6 +12,8 @@ const CreateBook = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
+  const backendUrl =
+    process.env.REACT_APP_BACKEND_URL || "http://localhost:5555";
 
   const handleSaveBook = () => {
     const data = {
@@ -21,7 +23,7 @@ const CreateBook = () => {
     };
     setLoading(true);
     axios
-      .post("http://localhost:5555/books", data)
+      .post(`${backendUrl}/books`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Book Created successfully", { variant: "success" });

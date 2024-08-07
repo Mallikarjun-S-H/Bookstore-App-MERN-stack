@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import BooksTable from "../components/home/BookTable";
 import BooksCard from "../components/home/BookCard";
 import { MdOutlineAddBox } from "react-icons/md";
+const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:5555";
 
 const Home = () => {
   const [books, setBooks] = useState([]);
@@ -14,7 +15,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:5555/books")
+      .get(`${backendUrl}/books`)
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
