@@ -1,5 +1,4 @@
 # Logs
-.env
 logs
 *.log
 npm-debug.log*
@@ -17,6 +16,7 @@ dist-ssr
 .vscode/*
 !.vscode/extensions.json
 .idea
+.env
 .DS_Store
 *.suo
 *.ntvs*

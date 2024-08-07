@@ -3,8 +3,8 @@ import axios from "axios";
 import BackButton from "../components/BackButton";
 import Spinner from "../components/Spinner";
 import { useParams } from "react-router-dom";
-const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:5555";
-console.log("Backend URL:", backendUrl);
+const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+
 const ShowBook = () => {
   const [book, setBook] = useState({});
   const [loading, setLoading] = useState(false);

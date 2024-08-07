@@ -12,8 +12,7 @@ const CreateBook = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
-  const backendUrl =
-    process.env.REACT_APP_BACKEND_URL || "http://localhost:5555";
+  const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 
   const handleSaveBook = () => {
     const data = {

@@ -4,7 +4,7 @@ import Spinner from "../components/Spinner";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
-const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:5555";
+const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 
 const DeleteBook = () => {
   const [loading, setLoading] = useState(false);

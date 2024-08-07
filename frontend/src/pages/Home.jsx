@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import BooksTable from "../components/home/BookTable";
 import BooksCard from "../components/home/BookCard";
 import { MdOutlineAddBox } from "react-icons/md";
-const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:5555";
+const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 
 const Home = () => {
   const [books, setBooks] = useState([]);
